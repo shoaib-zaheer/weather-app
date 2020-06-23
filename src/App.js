@@ -22,7 +22,9 @@ class App extends React.Component{
       <div>
 
         <Titles />
-        <Form />
+        {/* props are like HTML attribute to set props, we will be able to access it back in our form.js file */}
+        {/*this in here refer to APP and then function which is inside app*/}
+        <Form getWeather = {this.getWeather}/>
         <Weather />
 
       </div>
