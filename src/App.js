@@ -1,6 +1,7 @@
 import React from 'react';
-import Titles from './components/Titles'
-import Form from './components/Form'
+import Titles from './components/Titles.js'
+import Form from './components/Form.js'
+import Weather from './components/Weather.js'
 
 class App extends React.Component{
   render(){
@@ -9,6 +10,7 @@ class App extends React.Component{
 
         <Titles />
         <Form />
+        <Weather />
       </div>
     );
   }
