@@ -27,8 +27,8 @@ class App extends React.Component{
     // in fetch we use template string (``), it allow you to inject the variable in your file what you define
     const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${API_KEY}`);
     // date await will get all the date from api_call and using json to convert it to readable format for use
-    const date = await api_call.json();
-    console.log(date);
+    const data = await api_call.json();
+    console.log(data);
     // to sent the value of your state objects use below meted
     this.setState({
       temperature: data.main.temp,
@@ -50,7 +50,14 @@ class App extends React.Component{
         {/* props are like HTML attribute to set props, we will be able to access it back in our form.js file */}
         {/*this in here refer to APP and then function which is inside app*/}
         <Form getWeather = {this.getWeather}/>
-        <Weather />
+        <Weather 
+          temperature={this.state.temperature}
+          city={this.state.city}
+          country={this.state.country}
+          humidity={this.state.humidity}
+          description={this.state.description}
+          error={this.state.error}
+          />
 
       </div>
     );
