@@ -29,6 +29,16 @@ class App extends React.Component{
     // date await will get all the date from api_call and using json to convert it to readable format for use
     const date = await api_call.json();
     console.log(date);
+    // to sent the value of your state objects use below meted
+    this.setState({
+      temperature: data.main.temp,
+      city: data.name,
+      country:data.sys.country,
+      humidity:data.main.humidity,
+      description:data.weather[0].description,
+      error:""
+    });
+
   }
 
   render(){
