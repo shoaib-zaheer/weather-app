@@ -6,7 +6,7 @@ const Weather = props => (
 
           <div>
             {/* if this.props.temperature and if this.props.country and if <p>Location:{this.props.city}, {this.props.country} is true print below line */}
-            {props.temperature && this.props.country && <p>Location: {this.props.city}, {this.props.country}</p>}
+            {props.temperature && props.country && <p>Location: {props.city}, {props.country}</p>}
             {props.temperature && <p>Temperature: {props.temperature}</p>}
             {props.humidity &&<p>Humidity:{props.humidity}</p>}
             {props.description &&<p>Conditions:{props.description}</p>}
@@ -14,8 +14,6 @@ const Weather = props => (
             }
           </div>
        );
-
-
 // const Weather = (props) => {
 //   return(
 //           <div>
@@ -45,5 +43,4 @@ const Weather = props => (
 //     );
 //   }
 // }
->>>>>>> weather
 export default Weather;
