@@ -28,7 +28,10 @@ class App extends React.Component{
     const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${API_KEY}`);
     // date await will get all the date from api_call and using json to convert it to readable format for use
     const data = await api_call.json();
-    console.log(data);
+    // if city === true and country === true run below code in if statement
+    if (city && country){
+
+      console.log(data);
     // to sent the value of your state objects use below meted
     this.setState({
       temperature: data.main.temp,
@@ -38,6 +41,17 @@ class App extends React.Component{
       description: data.weather[0].description,
       error:""
     });
+    } else {
+      this.setState({
+      temperature: undefined,
+      city: undefined,
+      country: undefined,
+      humidity: undefined,
+      description: undefined,
+      error: "Please enter the value"
+    });
+    }
+    
 
   }
 
